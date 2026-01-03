@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>TechCore Informática</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">
+        <span>TechStore</span>
+    </div>
+
+    <button id="btnMenu" class="btn-menu">
+        ☰
+    </button>
+
+    <nav id="menu" class="menu">
+        <a href="#inicio">Início</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#contato">Contato</a>
+
+        <a href="#" id="btnAdmin" class="admin-link">Área Administrativa</a>
+
+        <div id="adminBox" class="admin-box">
+            <input type="password" id="senhaAdmin" placeholder="Senha">
+            <button onclick="loginAdmin()">Entrar</button>
+        </div>
+    </nav>
+</header>
+
+
+
+
+<section class="hero">
+    <h1>Loja especializada em informática</h1>
+    <p>Qualidade, performance e confiança</p>
+</section>
+
+<section id="servicos" class="servicos">
+    <h2>Serviços</h2>
+    <div class="cards-servicos">
+        <div class="card">Formatação</div>
+        <div class="card">Limpeza Técnica</div>
+        <div class="card">Montagem Gamer</div>
+        <div class="card">Upgrade</div>
+    </div>
+</section>
+
+<section class="admin-login" id="adminLogin" style="display:none;">
+    <a href="#" id="btnAdmin" class="admin-link">Área Administrativa</a>
+
+<div id="adminBox" class="admin-box">
+    <input type="password" id="senhaAdmin" placeholder="Senha administrativa">
+    <button onclick="loginAdmin()">Entrar</button>
+</div>
+
+</section>
+
+<section class="admin" id="painelAdmin" style="display:none;">
+    <h2>Painel Administrativo</h2>
+    <div class="form">
+        <input id="titulo" placeholder="Nome do produto">
+        <input id="preco" placeholder="Preço">
+        <input id="imagem" placeholder="URL da imagem">
+        <select id="categoria">
+            <option>Peças</option>
+            <option>Computadores</option>
+            <option>Periféricos</option>
+        </select>
+        <textarea id="descricao" placeholder="Descrição"></textarea>
+        <button onclick="adicionarProduto()">Adicionar</button>
+        <button class="logout" onclick="logoutAdmin()">Sair</button>
+    </div>
+</section>
+
+
+
+<section id="catalogo" class="catalogo">
+    <h2>Catálogo</h2>
+
+    <div class="filtros">
+        <input id="busca" placeholder="Buscar produto..." oninput="renderizar()">
+        <select id="filtroCategoria" onchange="renderizar()">
+            <option value="">Todas categorias</option>
+            <option>Peças</option>
+            <option>Computadores</option>
+            <option>Periféricos</option>
+        </select>
+    </div>
+
+    <div id="listaProdutos" class="grid"></div>
+</section>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="fecharModal()">×</span>
+        <img id="modalImg">
+        <h3 id="modalTitulo"></h3>
+        <p id="modalDesc"></p>
+        <p id="modalPreco"></p>
+        <a id="modalZap" target="_blank" class="zap">Comprar no WhatsApp</a>
+    </div>
+</div>
+
+<footer id="contato">
+    <p>📍 Campo Mourão - PR</p>
+    <p>📞 WhatsApp: (00) 00000-0000</p>
+    <p>© TechCore Informática</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
