@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin | Altis Informática</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/admin.css">
+</head>
+<body>
+
+<div class="admin-bg">
+    <div class="admin-overlay"></div>
+
+    <div class="admin-card">
+        <h2>Painel Administrativo</h2>
+        <p class="subtitle">Gerencie seus anúncios</p>
+
+        <div class="admin-container">
+            <!-- Lado esquerdo: criar anúncio -->
+            <div class="admin-form">
+                <input id="titulo" placeholder="Nome do produto">
+                <input id="preco" placeholder="Preço">
+                <input type="file" id="imagem" accept="image/*">
+                <img id="previewImagem" style="display:none; margin-top:10px; max-width:100%; border-radius:10px;">
+
+                <select id="categoria">
+                    <option>Peças</option>
+                    <option>Computadores</option>
+                    <option>Periféricos</option>
+                </select>
+
+                <textarea id="descricao" placeholder="Descrição"></textarea>
+
+                <button class="btn-primary" onclick="adicionarProduto()">
+                    Criar anúncio
+                </button>
+
+                <button class="btn-logout" onclick="logoutAdmin()">
+                    Sair
+                </button>
+            </div>
+
+            <!-- Lado direito: lista de anúncios -->
+            <div class="admin-list">
+                <h3>Anúncios criados</h3>
+                <div id="listaAdminProdutos" class="lista-scroll">
+                    <!-- Os anúncios serão renderizados aqui pelo JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="JS/script.js"></script>
+</body>
+</html>
