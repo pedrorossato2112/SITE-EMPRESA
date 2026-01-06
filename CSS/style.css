@@ -219,8 +219,8 @@ h2 {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
 }
 
 .produto {
@@ -327,4 +327,83 @@ footer {
     background: #0b0b0b;
     color: #aaa;
     font-size: 0.9rem;
+}
+/* ================= MOBILE HEADER ================= */
+
+@media (max-width: 768px) {
+
+    .header {
+        top: 10px;
+        width: calc(100% - 20px);
+        padding: 14px 18px;
+    }
+
+    .logo span {
+        font-size: 1rem;
+    }
+
+    .btn-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn-menu span {
+        width: 24px;
+        height: 2px;
+        background: #fff;
+        border-radius: 5px;
+    }
+
+    .menu {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        flex-direction: column;
+        background: rgba(15,15,15,0.95);
+        backdrop-filter: blur(18px);
+        padding: 20px;
+        border-radius: 20px;
+        display: none;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+    }
+
+    .menu a {
+        width: 100%;
+        text-align: center;
+        font-size: 1rem;
+        padding: 14px;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .admin-box {
+        position: static;
+        width: 100%;
+        margin-top: 15px;
+    }
+}
+@media (max-width: 600px) {
+
+    section {
+        padding: 90px 6%;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .produto {
+        padding: 18px;
+    }
 }
